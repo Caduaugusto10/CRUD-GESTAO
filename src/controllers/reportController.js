@@ -18,9 +18,8 @@ const exportIngressoPDF = async (req, res) => {
         doc.moveDown(0.5);
 
         ingressos.forEach((ingresso) => {
-            const precoFormatado = typeof ingresso.preco === "number" ? ingresso.preco.toFixed(2) : "0.00";
             doc.text(
-                `${ingresso.id} | ${ingresso.evento} | ${ingresso.local} | ${ingresso.data_evento} | ${ingresso.categoria} | R$ ${precoFormatado} | ${ingresso.quantidade_disponivel}`
+                `${ingresso.id} | ${ingresso.evento} | ${ingresso.local} | ${ingresso.data_evento} | ${ingresso.categoria} | R$ ${ingresso.preco} | ${ingresso.quantidade_disponivel}`
             );
         });
 
