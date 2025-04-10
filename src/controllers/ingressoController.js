@@ -2,8 +2,8 @@ const ingressoModel = require("../models/ingressoModels");
 
 const getAllIngressos = async (req, res) => {
     try {
-        const { categoria } = req.query; // Obtém o parâmetro de consulta "categoria"
-        const ingressos = await ingressoModel.getIngressos(categoria); // Passa o filtro para o modelo
+        const { categoria } = req.query;
+        const ingressos = await ingressoModel.getIngressos(categoria); 
         res.json(ingressos);
     } catch (error) {
         console.error("Erro ao buscar ingressos:", error);
